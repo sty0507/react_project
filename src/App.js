@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Chating from "./components/chating";
 import Chatting from "./components/Chatting";
 import Friend from "./components/Friend";

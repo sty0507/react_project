@@ -14,6 +14,7 @@ class friend extends React.Component {
                 <img
                   src={process.env.PUBLIC_URL + "/img/친구.png"}
                   className="chat"
+                  alt="chat"
                 />
               </span>
             </li>
@@ -23,6 +24,7 @@ class friend extends React.Component {
                   <img
                     src={process.env.PUBLIC_URL + "/img/채팅방.png"}
                     className="chat"
+                    alt="chat"
                   />
                 </span>
               </li>
@@ -32,6 +34,7 @@ class friend extends React.Component {
                 <img
                   src={process.env.PUBLIC_URL + "/img/더보기.png"}
                   className="chat"
+                  alt="chat"
                 />
               </span>
             </li>
@@ -40,6 +43,7 @@ class friend extends React.Component {
                 <img
                   src={process.env.PUBLIC_URL + "/img/이모티콘.png"}
                   className="chat"
+                  alt="chat"
                 />
               </span>
             </li>
@@ -48,6 +52,7 @@ class friend extends React.Component {
                 <img
                   src={process.env.PUBLIC_URL + "/img/알림.png"}
                   className="chat"
+                  alt="chat"
                 />
               </span>
             </li>
@@ -56,6 +61,7 @@ class friend extends React.Component {
                 <img
                   src={process.env.PUBLIC_URL + "/img/설정.png"}
                   className="chat"
+                  alt="chat"
                 />
               </span>
             </li>
