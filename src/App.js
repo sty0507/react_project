@@ -5,9 +5,23 @@ import Chatting from "./components/Chatting";
 import Friend from "./components/Friend";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-class App extends React.Component {
-  render() {
-    return (
+// class App extends React.Component {
+//   render() {
+//     return (
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path="/" element={<Chatting />} />
+//           <Route path="/Friend" element={<Friend />} />
+//           <Route path="/chat" element={<Chating />} />
+//         </Routes>
+//       </BrowserRouter>
+//     );
+//   }
+// }
+
+const App = () => {
+  return (
+    <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Chatting />} />
@@ -15,8 +29,8 @@ class App extends React.Component {
           <Route path="/chat" element={<Chating />} />
         </Routes>
       </BrowserRouter>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default App;

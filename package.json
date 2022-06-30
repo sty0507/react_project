@@ -41,5 +41,5 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "homepage": "http://sty0507.github.io/react_project/index.html"
+  "homepage": "."
 }
