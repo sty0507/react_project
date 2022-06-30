@@ -1,6 +1,6 @@
 import "../friend.css";
 import "../App.css";
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 class friend extends React.Component {
@@ -14,7 +14,7 @@ class friend extends React.Component {
                 <img
                   src={process.env.PUBLIC_URL + "/img/친구.png"}
                   className="chat"
-                ></img>
+                />
               </span>
             </li>
             <Link to="/">
@@ -23,7 +23,7 @@ class friend extends React.Component {
                   <img
                     src={process.env.PUBLIC_URL + "/img/채팅방.png"}
                     className="chat"
-                  ></img>
+                  />
                 </span>
               </li>
             </Link>
@@ -32,7 +32,7 @@ class friend extends React.Component {
                 <img
                   src={process.env.PUBLIC_URL + "/img/더보기.png"}
                   className="chat"
-                ></img>
+                />
               </span>
             </li>
             <li>
@@ -40,7 +40,7 @@ class friend extends React.Component {
                 <img
                   src={process.env.PUBLIC_URL + "/img/이모티콘.png"}
                   className="chat"
-                ></img>
+                />
               </span>
             </li>
             <li>
@@ -48,7 +48,7 @@ class friend extends React.Component {
                 <img
                   src={process.env.PUBLIC_URL + "/img/알림.png"}
                   className="chat"
-                ></img>
+                />
               </span>
             </li>
             <li>
@@ -56,7 +56,7 @@ class friend extends React.Component {
                 <img
                   src={process.env.PUBLIC_URL + "/img/설정.png"}
                   className="chat"
-                ></img>
+                />
               </span>
             </li>
           </ul>
@@ -178,7 +178,7 @@ class friend extends React.Component {
               </li>
               <li>
                 <img
-                  src={process.env.PUBLIC_URL + "/pic/friend1.png"}
+                  src={process.env.PUBLIC_URL + "pic/friend1.png"}
                   alt="친구1프로필사진"
                 />
                 <div className="profile">

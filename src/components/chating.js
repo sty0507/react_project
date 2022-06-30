@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "../chat.css";
 export default (props) => {
   return (
@@ -17,11 +17,8 @@ export default (props) => {
         </div>
         {/* <!-- 프로필 사진, 프로필명 --> */}
         <header>
-          <img
-            class="profile-img"
-            src={process.env.PUBLIC_URL + "/img/프로필.png"}
-            alt="쀼프로필사진"
-          />
+          <img class="profile-img" src="./img/프로필.png" alt="쀼프로필사진" />
+
           <div class="profile-col">
             <span class="profile-name">최은결</span>
             <div class="sub-menu">

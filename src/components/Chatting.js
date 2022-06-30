@@ -16,7 +16,7 @@ class Chatting extends React.Component {
                   <img
                     src={process.env.PUBLIC_URL + "/img/친구.png"}
                     className="chat"
-                  ></img>
+                  />
                 </span>
               </li>
             </Link>
@@ -25,7 +25,7 @@ class Chatting extends React.Component {
                 <img
                   src={process.env.PUBLIC_URL + "/img/채팅방.png"}
                   className="chat"
-                ></img>
+                />
               </span>
             </li>
             <li>
@@ -33,7 +33,7 @@ class Chatting extends React.Component {
                 <img
                   src={process.env.PUBLIC_URL + "/img/더보기.png"}
                   className="chat"
-                ></img>
+                />
               </span>
             </li>
             <li>
