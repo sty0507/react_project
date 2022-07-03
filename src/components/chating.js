@@ -1,88 +1,108 @@
-import React from "react";
-import "../chat.css";
-export default (props) => {
-  return (
-    <main>
-      <div id="chat-body">
-        {/* <!-- 설정바(최소화, 닫기 버튼 등) --> */}
-        <div class="setting_bar">
-          <i class="icon-window-minimize" alt="최소화버튼" title="최소화"></i>
-          <i class="icon-window-maximize" alt="최대화버튼" title="최대화"></i>
-          <i class="icon-cancel" alt="닫기버튼" title="닫기"></i>
-        </div>
-        {/* <!-- 알림, 메뉴 기능 --> */}
-        <div class="main-menu">
-          <i class="icon-bell" title="알림"></i>
-          <i class="icon-ellipsis" title="메뉴"></i>
-        </div>
-        {/* <!-- 프로필 사진, 프로필명 --> */}
-        <header>
-          <img class="profile-img" src="./img/프로필.png" alt="쀼프로필사진" />
+import "../chat-room.css";
+import React, { useState, useRef } from 'react';
 
-          <div class="profile-col">
-            <span class="profile-name">최은결</span>
-            <div class="sub-menu">
-              <i class="icon-box" title="채팅방 서랍"></i>
-              <i class="icon-search" title="검색"></i>
-            </div>
-          </div>
-        </header>
-        <main>
-          {/* <!-- 고정된 공지사항 영역 --> */}
-          <div class="notice-bar">
-            <i class="icon-bullhorn"></i>
-            <span>멘트를 고정해놓는 곳입니다.</span>
-            <i class="icon-down-open-big"></i>
-          </div>
-          {/* <!-- 채팅 내용 시작 --> */}
-          <div class="chat-content">
-            {/* <!-- 메시지 시작 날짜 --> */}
-            <div class="date-line">
-              <time datetime="2021-03-29">2021년 3월 29일 월요일</time>
-            </div>
-            {/* <!-- 채팅 내용 --> */}
-            <div class="main-chat">
-              <div class="friend-chat">
-                <img
-                  class="profile-img"
-                  src={process.env.PUBLIC_URL + "/img/프로필.png"}
-                  alt="쀼프로필사진"
-                />
-                <div class="friend-chat-col">
-                  <span class="profile-name">최은결</span>
-                  <span class="balloon">뭐함?</span>
-                </div>
-                <time datetime="07:30:00+09:00">오전 7:30</time>
-              </div>
-              <div class="me-chat">
-                <div class="me-chat-col">
-                  <span class="balloon">뭐하겠냐</span>
-                </div>
-                <time datetime="07:32:00+09:00">오전 7:32</time>
-              </div>
-              <div class="friend-chat">
-                <img
-                  class="profile-img"
-                  src={process.env.PUBLIC_URL + "/img/프로필.png"}
-                  alt="쀼프로필사진"
-                />
-                <div class="friend-chat-col">
-                  <span class="profile-name">최은결</span>
-                  <span class="balloon">아 ㅇㅋ</span>
-                </div>
-                <time datetime="07:33:00+09:00">오전 7:33</time>
-              </div>
-            </div>
-          </div>
-          {/* 채팅 입력창 --> */}
-          <div class="insert-content">
-            <form name="chatform">
-              <textarea name="chat-insert"></textarea>
-              <input type="submit" class="chat-submit" value="전송" />
-            </form>
-          </div>
-        </main>
+
+
+function Chating() {
+
+    const [input, setInput] = useState('');
+    const [lists, setLists] = useState([]);
+    const [nextId, setNextId] = useState(0);
+    const inputName = useRef(null);
+  
+    /* 이벤트들 */
+  
+    /* input값에 문자 입력할 때 마다 실행 되는 이벤트 함수*/
+    const onChange = (e) => {
+      setInput(e.target.value);
+    };
+  
+    /* enter or 확인 버튼 클릭 시 발생하는 이벤트 함수*/
+    const submit = (e) => {
+      e.preventDefault();  //새로고침 방지
+      const about_lists = lists.concat({ //원래 있는 리스트에 붙여주기
+        id: nextId,
+        text: input,
+      });
+      setNextId(nextId + 1); //id값 +1
+  
+      /*방금 붙여준 리스트까지 포함 된 리스트로 세팅하기*/
+      setLists(about_lists); 
+      setInput(''); //input 태그안에 있는 문자 지워주기
+    };
+  
+    /* 리스트들 화면에 띄우기 위해 map으로 반복 요소 불러오기 */
+    const input_list = lists.map((list) => (
+      <div
+        /*고유 key값 주기*/
+        key={list.id}     >
+        {list.text}
       </div>
-    </main>
+    ));
+
+  return (
+    <div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <div id="chat-room">
+        <div className="message-box">
+            <div className="message-group" data-date-str="2014년 12월 10일 일요일">
+                <div className="chat-message other">
+                    <section><i className="fa fa-user"></i></section>
+                    <span>서태영</span>
+                    <div>안녕</div>
+                </div>
+                
+                <div className="chat-message mine">
+                    <section><i className="fa fa-user"></i></section>
+                    <span>함지민</span>
+                    <div>안녕</div>
+                </div>
+            </div>
+            
+            <div className="message-group" data-date-str="2014년 12월 11일 월요일">
+                <div className="chat-message other">
+                <section><i className="fa fa-user"></i></section>
+                    <span>서태영</span>
+                    <div>2308 서태영</div>
+                </div>
+                
+                <div className="chat-message mine">
+                    <section><i className="fa fa-user"></i></section>
+                    <span>함지민</span>
+                    <div>2313 함지민</div>
+                </div>
+                <br></br>
+                <div className="chat-message mine">
+                    <section><i className="fa fa-user"></i></section>
+                    <span>함지민</span>
+                    {input_list}<br></br>
+                </div>
+            </div>
+        </div>
+        <div className="input-box">
+            <form onSubmit={submit}>
+              <input type="text"
+                  name="list"
+                  id="text-input"
+                  value={input}
+                  onChange={onChange}
+                  ref={inputName}/>
+            
+            <div className="btn-plus">
+                <i className="fa fa-plus" aria-hidden="true"></i>
+            </div>
+            <div className="btn-emo">
+                <i className="fa fa-smile-o" aria-hidden="true"></i>
+            </div>
+            <div>
+                <button className="btn-submit" type="submit">전송</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
   );
 };
+
+export default Chating;
