@@ -116,9 +116,9 @@ class Chatting extends React.Component {
                 </span>
                 <div className="person1text">
                   <span>
-                    <h3>최은결</h3>
+                    <h3>서태영</h3>
                     <h5>오후 8:05</h5>
-                    <p>뭐하냐</p>
+                    <p>ㅎ2</p>
                   </span>
                 </div>
               </div>

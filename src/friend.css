@@ -4,7 +4,6 @@
 /* 헤더 안의 컨텐츠 스타일 지정 = main-layout.css 참고 */
 
 /* 네비게이션 안의 컨텐츠 스타일 지정 = main-layout.css 참고 */
-
 /* 메인 안의 컨텐츠 스타일 지정 */
 main {
   /* 친구 리스트는 flex box로 레이아웃으로 구성 */
@@ -71,7 +70,7 @@ body {
 #content {
   top: 0;
   left: 0;
-  display: grid;
+  display: flex;
   grid-template-columns: 5rem 1.25rem auto 1.25rem; /* 각 grid의 width */
   grid-template-rows: 1.875rem 3.125rem auto 6.25rem; /* 각 grid의 height */
   gap: 0;
@@ -100,16 +99,20 @@ body {
 
 /* 헤더(header) 영역 레이아웃 지정 */
 header {
-  grid-area: header;
+  /* grid-area: header; */
   position: sticky;
-  top: 1.875rem; /* grid row의 첫번째 + gap 크기와 동일*/
+  /*top: 1.875rem; /* grid row의 첫번째 + gap 크기와 동일*/
   background-color: white;
+  display: flex;
+  height: auto;
+  width: auto;
+  justify-content: space-between;
 }
-header > * {
+/* header > * {
   /* 가운데 정렬 */
-  line-height: 3.125rem; /* grid row의 두번째 크기와 동일 */
-  vertical-align: middle;
-}
+/*line-height: 3.125rem; /* grid row의 두번째 크기와 동일 */
+/*vertical-align: middle;
+} */
 /* 헤더 안의 컨텐츠 스타일 지정 */
 /* 친구리스트/채팅리스트의 html 파일에서 동일한 스타일을 갖기 때문에 공통된 스타일로 구분했음 */
 header span {
@@ -174,8 +177,10 @@ nav {
 /* 메인(main) 영역 레이아웃 지정 */
 main {
   /* 친구 리스트를 flex box로 레이아웃 구성 */
+  display: block;
   grid-area: main;
-  margin-left: 0.125rem; /* 16 브라우저 기준 2px */
+  margin-left: 10px;
+  /*margin-left: 0.125rem; /* 16 브라우저 기준 2px */
 }
 li {
   transition-property: all;
@@ -205,7 +210,13 @@ aside {
 aside > img {
   height: 6.25rem;
 }
-
+/* nav {
+  width: 200px;
+  background-color: #eee;
+  border-right: 1px solid #ddd;
+  position: fixed;
+  height: 100%;
+} */
 /* 카카오톡 친구리스트 화면(friend.html)의 특정적인 스타일만 작성 */
 /* 큰 레이아웃은 main-layout.css에 작성되어 있음 */
 
@@ -216,6 +227,7 @@ aside > img {
 /* 메인 안의 컨텐츠 스타일 지정 */
 main {
   /* 친구 리스트는 flex box로 레이아웃으로 구성 */
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
